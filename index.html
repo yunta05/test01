@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>シンプルテキストエディタ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="toolbar">
+        <div class="title">
+          <h1>シンプルテキストエディタ</h1>
+          <p class="subtitle">軽量で使いやすいメモ用エディタ</p>
+        </div>
+        <div class="actions">
+          <button id="new-btn" type="button">新規</button>
+          <label class="file-input">
+            開く
+            <input id="file-input" type="file" accept=".txt,.md,.text" />
+          </label>
+          <button id="save-btn" type="button">保存</button>
+        </div>
+      </header>
+
+      <section class="status">
+        <div>
+          <span id="status-text">準備完了</span>
+        </div>
+        <div class="counts">
+          <span>文字数: <strong id="char-count">0</strong></span>
+          <span>単語数: <strong id="word-count">0</strong></span>
+          <span>行数: <strong id="line-count">1</strong></span>
+        </div>
+      </section>
+
+      <main class="editor">
+        <textarea
+          id="editor"
+          placeholder="ここに入力してください..."
+          spellcheck="false"
+        ></textarea>
+      </main>
+
+      <footer class="footer">
+        <p>自動保存は 5 秒ごとにローカルへ保存されます。</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
